@@ -17,7 +17,7 @@ public:
     ~vector() {delete[] elem;}
 
     int size() const {return sz;}
-    double get(int n) const {return elem[n];}
+    double operator[] (int n) {return elem[n];};
     void set(int n, double v) {elem[n]=v;}
 
 };
@@ -69,11 +69,11 @@ int main()
 
     v.set(1,99);
     v2.set(0,88);
-    std::cout << v.get(0) << ' ' << v2.get(1) << '\n';
+    std::cout << v[0] << ' ' << v2[1] << '\n';
 
     vector v3(10);
     v3.set(4, 10);
     v2=v3;
     v3.set(4, 0);
-    std::cout << v2.get(4);
+    std::cout << v2[4];
 }
